@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<%- include('header')-%>
 <html lang="en">
 
 <head>
@@ -8,26 +10,40 @@
 </head>
 
 <body>
-    <h3><%=movie.title%></h3>
+    <h3>
+        <%=movie.title%>
+    </h3>
     <ul>
-        <li>Rating: <%=movie.rating%></li>
-        <li>Awards: <%=movie.awards%></li>
-        <li>Length: <%=movie.length%></li>
-        <li>Release Date: <%=movie.release_date%></li>
-        <li>Genre: <%= movie.genre.name %></li>
+        <li>Rating: <%=movie.rating%>
+        </li>
+        <li>Awards: <%=movie.awards%>
+        </li>
+        <li>Length: <%=movie.length%>
+        </li>
+        <li>Release Date: <%=movie.release_date%>
+        </li>
+        <li>Genre: <%= movie.genre.name %>
+        </li>
         <li>
             Actor:
             <ul>
                 <% for (actor of movie.actors) { %>
-                <li><a href="/actors/detail/<%= actor.id %>"><%= actor.first_name %> <%= actor.last_name %></a></li>
-                
-                <% } %>
+                    <li><a href="/actors/detail/<%= actor.id %>">
+                            <%= actor.first_name %>
+                                <%= actor.last_name %>
+                        </a></li>
+
+                    <% } %>
             </ul>
         </li>
     </ul>
     <a href="/movies/edit/<%= movie.id %>">Edit</a>
     <hr>
+    <form action="/movies/delete/<%= movie.id %>" method="POST">
+        <button type="submit">DELETE</button>
+    </form>
+    <hr>
     <a href="/movies">Back to list</a>
 </body>
-
+<%- include('footer')-%>
 </html>

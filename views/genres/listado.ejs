@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../movies/header')-%>
+
+<body>
+    <h1>Listado de Generos</h1>
+    <% for(genre of genres) {%>
+    <li><a href="/movies/movies_by_genre/<%=genre.id%>"><%=genre.name%></a></li>
+    <% } %>
+    <hr>
+   
+</body>
+<%- include('../movies/footer')-%>
+</html>

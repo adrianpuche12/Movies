@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../movies/header')-%>
+
+<body>
+    <h1>Listado de series</h1>
+    <% for(serie of series) {%>
+    <li><a href="/serie/detail/<%=serie.id%>"><%=serie.title%></a></li>
+    <% } %>
+    <hr>
+    <a href="/serie/create">Crear una nueva Serie</a>
+</body>
+<%- include('../movies/footer')-%>
+</html>

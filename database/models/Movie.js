@@ -33,22 +33,22 @@ module.exports = (sequelize, DataTypes) => {
     const Movie = sequelize.define(alias, cols, config);
 
     Movie.associate = function (models) {
-        // hasMany() tengo muchas.
-        // belongsTo() pertenezco a una... 
-        // belongsToMany() pertenezco a varias... 
+        
 
+// belongsTo() pertenezco a una
         Movie.belongsTo(models.Genre, {
             as: 'genre',
             foreignKey: 'genre_id'
         });
 
-        Movie.belongsToMany(models.Actor, {
-            as: 'actors',
-            through: 'actor_movie',
-            foreignKey: 'movie_id',
-            otherKey: 'actor_id',
-            timestamps: false
-        })
+// belongsToMany() pertenezco a varias... de muchos a muchos
+       Movie.belongsToMany(models.Actor, {
+             as: 'actors', // apodo a utilizar el la vista y el controlador
+            through: 'actor_movie', // nombre de la table 
+            foreignKey: 'movie_id', // clave foranea que hace referencia a las pelicualas donde actua el actor
+         otherKey: 'actor_id', // clave foranea que hace referencia a los actores
+            timestamps: false // tengo que aclarar si la tabla tiene o nos los timestamps (const config)
+         })
     }
 
     return Movie;

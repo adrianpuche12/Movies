@@ -1,3 +1,5 @@
+<%- include('header')-%>
+
 <h1>Create a Movie!</h1>
 <a href="/movies">Back to list</a>
 <form action="/movies/edit/<%= movie.id %>" method="post">
@@ -37,3 +39,5 @@
     </div>
 </form>
 <a href="/movies">Back to list</a>
+
+<%- include('footer')-%>

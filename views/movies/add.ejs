@@ -1,3 +1,5 @@
+<%- include('header')-%>
+
 <h1>Create a Movie!</h1>
 <a href="/movies">Back to list</a>
 <form action="/movies/create" method="post">
@@ -24,12 +26,15 @@
     <div class="form-group">
         <label for="genre">Genre:</label>
         <select class="form-control" name="genre" id="genre">
-            <option value=""></option>
-            <% for (let i = 0; i < genres.length; i++) { %>
-            <option value="<%=genres[i].id%>">
-                <%=genres[i].name%>
-            </option>
-            <% } %>
+
+            <% for (const genre of genres) { %>
+
+                <option value="<%= genre.id %>">
+                    <%= genre.name %>
+                </option>
+
+                <% } %>
+
         </select>
     </div>
     <div class="form-group">
@@ -37,3 +42,5 @@
     </div>
 </form>
 <a href="/movies">Back to list</a>
+
+<%- include('footer')-%>

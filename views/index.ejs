@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<%- include('movies/header')-%>
+
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <main>
+      <h3>encontrar todo lo que buscas</h3>
+
+      <section class="contenedor-principal">
+        
+        <a href="/movies"><img src="/images/movies/plus-cine2.jpg" alt="movies"></a>
+
+        <a href="/series"><img src="/images/series/27885.jpg" alt="series"></a>
+
+        <a href="/actores"><img src="/images/actores/actores.jpg" alt="actores"></a>
+
+        <a href="/genres"><img src="/images/generos/8e28f09cd9fa0490c43a3727caf22aa8.jpg" alt="actores"></a>
+      </section>
+    </main>
   </body>
+
+  <%- include('movies/footer')-%>
+
 </html>

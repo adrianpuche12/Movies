@@ -1,19 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
+
+<%- include('header')-%>
 
 <body>
-    <h1>Listado de peliculas</h1>
-    <% for(movie of movies) {%>
-    <li><a href="/movies/detail/<%=movie.id%>"><%=movie.title%></a></li>
-    <% } %>
+    <h1>Listado de peliculas:</h1>
+
+
+    
+        <% for(movie of movies) { %>
+            <li><a href="/movies/detail/<%=movie.id%>">
+
+                    <% if (movie.genre) { %>
+                        <%=movie.title%> - <%=movie.genre.name %>
+                                <% } %>
+                                
+            </a>
+        </li>
+            <% } %>
+  
+
     <hr>
     <a href="/movies/create">Crear una nueva Peli</a>
 </body>
+
+<%- include('footer')-%>
 
 </html>
