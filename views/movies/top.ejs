@@ -1,24 +1,19 @@
-<!DOCTYPE html>
+<html lang="en">
+<%- include('../incluciones/header')-%>
+    <%- include('../incluciones/head')-%>
 
-<%- include('header')-%>
-    <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+        <body>
+            <h1>Listado de peliculas TOP 10</h1>
+            <% for(movie of movies) {%>
+                <li><a href="/movies/detail/<%=movie.id%>">
+                        <%=movie.title%>
+                    </a></li>
+                <% } %>
+                    <hr>
+                    <a href="/movies/create">Crear una nueva Peli</a>
+        </body>
 
-    <body>
-        <h1>Listado de peliculas TOP 10</h1>
-        <% for(movie of movies) {%>
-            <li><a href="/movies/detail/<%=movie.id%>">
-                    <%=movie.title%>
-                </a></li>
-            <% } %>
-                <hr>
-                <a href="/movies/create">Crear una nueva Peli</a>
-    </body>
-    <%- include('footer')-%>
+        <%- include('../incluciones/footer')-%>
 
-    </html>
+</html>

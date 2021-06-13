@@ -1,24 +1,29 @@
-<!DOCTYPE html>
 <html>
-<%- include('movies/header')-%>
+<%- include('./incluciones/head')-%>
+  <%- include('./incluciones/header')-%>
 
-  <body>
-    <main>
-      <h3>encontrar todo lo que buscas</h3>
+    <body>
+      <main>
+        <h3>encontrar todo lo que buscas</h3>
 
-      <section class="contenedor-principal">
-        
-        <a href="/movies"><img src="/images/movies/plus-cine2.jpg" alt="movies"></a>
+        <section class="contenedor-principal">
 
-        <a href="/series"><img src="/images/series/27885.jpg" alt="series"></a>
+          <div class="movie_series">
 
-        <a href="/actores"><img src="/images/actores/actores.jpg" alt="actores"></a>
+            <a href="/movies"><img src="/images/movies/plus-cine2.jpg" alt="movies"></a>
+            <a href="/series"><img src="/images/series/27885.jpg" alt="series"></a>
+          </div>
 
-        <a href="/genres"><img src="/images/generos/8e28f09cd9fa0490c43a3727caf22aa8.jpg" alt="actores"></a>
-      </section>
-    </main>
-  </body>
+          <div class="actors_genres">
 
-  <%- include('movies/footer')-%>
+            <a href="/actors/list"><img src="/images/actores/actores.jpg" alt="actores"></a>
+            <a href="/genres"><img src="/images/generos/8e28f09cd9fa0490c43a3727caf22aa8.jpg" alt="generos"></a>
+
+          </div>
+        </section>
+      </main>
+    </body>
+
+    <%- include('./incluciones/footer')-%>
 
 </html>

@@ -87,7 +87,7 @@ const moviesController = {
   movies_by_genre: async (req, res, next) => {
     const genre_by_movies = await db.Movie.findAll({
       where: {
-        genre_id: { [db.Sequelize.Op.gt]: req.params.id }
+        genre_id: req.params.id 
       }
     });
     res.render("movies/genre_by_movies", {genre_by_movies: genre_by_movies})

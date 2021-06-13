@@ -1,21 +1,21 @@
-<%- include('header')-%>
+<%- include('../incluciones/header')-%>
+    <%- include('../incluciones/head')-%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
-    <h1>Listado de peliculas por genero:</h1>
-    <% for(genre_by_movie of genre_by_movies) {%>
+        <body>
 
-        
-        <li>
-            <%=genre_by_movie.title%>
-        </li>
-        <% } %>
+            
+            <h1>Listado de peliculas por genero:</h1>
 
-</body>
-<%- include('footer')-%>
-</html>
+            <% for(genre_by_movie of genre_by_movies) {%>
+
+
+                <li>
+                    <%=genre_by_movie.title%>
+                </li>
+                <% } %>
+
+        </body>
+        <%- include('../incluciones/footer')-%>
+
+            </html>

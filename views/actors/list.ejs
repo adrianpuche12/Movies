@@ -1,0 +1,31 @@
+<html lang="en">
+<%- include('../incluciones/header')-%>
+    <%- include('../incluciones/head')-%>
+
+        <body>
+            <h3>todos tus actores favoritos</h3>
+
+            <% for (const actors of actor) { %>
+
+
+                <ul>
+                    <a href="#">
+                        <li>Name: <%=actors.first_name %>
+                                <%= actors.last_name %>
+                    </a>
+                    </li>
+                    <li>Rating: <%=actors.rating%>
+                    </li>
+                    <li>Favorite Movie: <%=actors.favorite_movie_id%>
+                    </li>
+
+                </ul>
+
+                <% } %>
+
+                    <hr>
+                    <a href="/movies">Back to list</a>
+        </body>
+        <%- include('../incluciones/footer')-%>
+
+</html>

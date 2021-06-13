@@ -1,16 +1,24 @@
-<!DOCTYPE html>
 <html lang="en">
-    <%- include('../movies/header')-%>
+<%- include('../incluciones/header')-%>
+    <%- include('../incluciones/head')-%>
 
-<body>
-    <h3><%= actor.first_name %> <%= actor.last_name %></h3>
-    <ul>
-        <li>Rating: <%=actor.rating%></li>
-        <li>Favorite Movie : <%=actor.favorite_movie_id%></li>
-       
-    </ul>
-    <hr>
-    <a href="/movies">Back to list</a>
-</body>
-<%- include('../movies/footer')-%>
+        <body>
+
+            <ul>
+                <li>Nombre: <%=actor.first_name %>
+                </li>
+                <li>Apellido: <%= actor.last_name %>
+                </li>
+                <li>Rating: <%=actor.rating%>
+                </li>
+                <li>Favorite Movie: <%=actor.favorite_movie_id%>
+                </li>
+
+            </ul>
+            <hr>
+            <a href="/movies">Back to list</a>
+        </body>
+
+        <%- include('../incluciones/footer')-%>
+
 </html>
